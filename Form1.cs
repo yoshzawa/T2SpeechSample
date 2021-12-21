@@ -33,7 +33,7 @@ namespace WindowsFormsApp1
             // 読み上げテキストの設定
             SynthesisInput input = new SynthesisInput
             {
-                Text = "目的地は、日本橋です。"
+                Text = textBox1.Text
             };
 
             // 音声タイプの設定
@@ -65,7 +65,9 @@ namespace WindowsFormsApp1
             {
                 response.AudioContent.WriteTo(output);
                 Console.WriteLine($"音声コンテンツを '{fileName}' として保存しました。");
+
             }
+            Process.Start("explorer.exe", Directory.GetCurrentDirectory());
         }
     }
 }
